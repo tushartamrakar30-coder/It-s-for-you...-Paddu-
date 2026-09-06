@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For myy paddu❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 20%, #4a001b, #150009 85%);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* Floating Hearts Background */
+    .bg-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart-float {
+      position: absolute;
+      color: rgba(255, 64, 129, 0.25);
+      animation: floatUp 8s linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(105vh) scale(0.6); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.6; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Reliable Screen Visibility with Smooth Fade */
+    .screen {
+      width: 100%;
+      display: none;
+    }
+
+    .screen.active {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      animation: screenFadeIn 0.4s ease forwards;
+    }
+
+    @keyframes screenFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Glass Card UI */
+    .glass-card {
+      width: 100%;
+      background: rgba(24, 15, 20, 0.84);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 77, 148, 0.25);
+      border-radius: 30px;
+      padding: 34px 22px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 64, 129, 0.05);
+      text-align: center;
+      position: relative;
+    }
+
+    /* Password Screen Elements */
+    .lock-frame {
+      position: relative;
+      display: inline-block;
+      margin: 14px 0 18px;
+    }
+
+    .lock-heart-badge {
+      font-size: 46px;
+      animation: heartbeat 1.4s ease-in-out infinite;
+      filter: drop-shadow(0 0 15px rgba(255, 42, 109, 0.8));
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.18); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+
+    .pass-input {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 77, 148, 0.4);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 19px;
+      text-align: center;
+      letter-spacing: 5px;
+      outline: none;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .pass-input:focus {
+      border-color: #ff2a6d;
+      box-shadow: 0 0 20px rgba(255, 42, 109, 0.6);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .pass-input::placeholder {
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .error-shake {
+      animation: shake 0.4s ease-in-out;
+      border-color: #ff3344 !important;
+      box-shadow: 0 0 15px rgba(255, 0, 50, 0.7) !important;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    .error-msg {
+      color: #ff6b8b;
+      font-size: 13px;
+      margin: 8px 0;
+      min-height: 18px;
+    }
+
+    /* Headings & Texts */
+    .tagline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #ff7597;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .title-large {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      margin: 10px 0 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-head {
+      font-size: 14px;
+      color: #d1b8c2;
+      margin-bottom: 20px;
+    }
+
+    .lead-text {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #f7e8ee;
+      margin-bottom: 24px;
+    }
+
+    .quote-box {
+      border-left: 3px solid #ff2a6d;
+      padding: 12px 14px;
+      text-align: left;
+      margin: 18px 0 28px;
+      background: rgba(255, 42, 109, 0.06);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .quote-box p {
+      font-size: 13.5px;
+      font-style: italic;
+      color: #e4ccd6;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 50px;
+      border: none;
+      background: linear-gradient(135deg, #ff2a6d, #d9004c);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 42, 109, 0.55);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+
+    .btn-secondary {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    /* Gallery Grid */
+    .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 12px rgba(255, 117, 151, 0.4);
+    }
+
+    .photo-grid-20 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 34px;
+    }
+
+    .photo-card {
+      width: 100%;
+      height: 230px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #25121b;
+      border: 1px solid rgba(255, 117, 151, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .call-card {
+      width: 100%;
+      max-width: 320px;
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      border: 1.5px solid #ff4d94;
+      box-shadow: 0 0 30px rgba(255, 42, 109, 0.35);
+      background: #25121b;
+    }
+
+    .call-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Screen 3 Adoration */
+    .adoration-box {
+      text-align: left;
+      margin: 18px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .adoration-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 42, 109, 0.08);
+      border: 1px solid rgba(255, 77, 148, 0.2);
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 14.5px;
+      color: #ffe6ee;
+    }
+
+    .adoration-item span {
+      font-size: 18px;
+    }
+
+    .curious-line {
+      font-family: 'Dancing Script', cursive;
+      font-size: 24px;
+      color: #ff7597;
+      text-align: center;
+      margin: 8px 0 14px;
+      line-height: 1.4;
+    }
+
+    .button-arena {
+      position: relative;
+      width: 100%;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #runawayBtn {
+      z-index: 90;
+      transition: top 0.2s ease, left 0.2s ease;
+      touch-action: none;
+    }
+
+    /* Screen 4 Poetry */
+    .poetic-line {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      line-height: 1.55;
+      margin-bottom: 22px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .poetic-line.cursive {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      color: #ff6b95;
+    }
+
+    .poetic-line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Screen 5 Finale */
+    .finale-box {
+      text-align: center;
+      padding: 40px 10px;
+    }
+
+    .crown-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+      animation: pulseCrown 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseCrown {
+      0% { transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+      100% { transform: scale(1.15); filter: drop-shadow(0 0 20px gold); }
+    }
+
+    .mine-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #ff7597, #ff1a60);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 0 15px rgba(255, 42, 109, 0.7));
+    }
+
+    #celebrationCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgSong" loop preload="auto">
+    <source src="Elliot James Reay -.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="bg-hearts" id="ambientHearts"></div>
+  <canvas id="celebrationCanvas"></canvas>
+
+  <div class="app-container">
+
+    <section id="screen0" class="screen active">
+      <div class="glass-card" style="padding: 40px 22px;">
+        <div class="tagline">Only For Someone Special</div>
+        
+        <div class="lock-frame">
+          <div class="lock-heart-badge">💖</div>
+        </div>
+
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 8px;">
+          Locked with Love
+        </h2>
+        <p style="font-size: 13.5px; color: #d6b8c4; margin-bottom: 16px;">
+          Enter our secret code to open this letter
+        </p>
+
+        <form onsubmit="event.preventDefault(); validatePassword();">
+          <input 
+            type="password" 
+            id="passInput" 
+            class="pass-input" 
+            placeholder="Enter passcode..." 
+            inputmode="numeric" 
+            maxlength="10"
+            autocomplete="off"
+          />
+          <div id="errorMsg" class="error-msg"></div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 6px;">
+            Unlock My Heart 🔑
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="screen1" class="screen">
+      <div class="glass-card">
+        <div class="tagline">A Little Something For You</div>
+        <div style="font-size: 20px; color: #ff3366; margin-bottom: 8px;">❤️</div>
+
+        <h1 class="title-large">Hey, myy paddu...</h1>
+        <p class="sub-head">Before anything else...</p>
+
+        <p class="lead-text">Can I tell you something from my heart?</p>
+
+        <div class="quote-box">
+          <p>"Sometimes the heart knows what the mind takes time to understand."</p>
+        </div>
+
+        <button class="btn-primary" onclick="startExperience()">
+          Yes, I'm listening ❤️
+        </button>
+        <button class="btn-secondary" onclick="startExperience()">
+          Yes, tell me ♡
+        </button>
+      </div>
+    </section>
+
+    <section id="screen2" class="screen">
+      <div class="glass-card" style="padding: 24px 16px; margin-bottom: 20px;">
+        <h2 class="gallery-title">our first day of talking</h2>
+
+        <div class="photo-grid-20">
+          <div class="photo-card"><img src="img1.jpg" alt="Memory 1" /></div>
+          <div class="photo-card"><img src="img2.jpg" alt="Memory 2" /></div>
+          <div class="photo-card"><img src="img3.jpg" alt="Memory 3" /></div>
+          <div class="photo-card"><img src="img4.jpg" alt="Memory 4" /></div>
+          <div class="photo-card"><img src="img5.jpg" alt="Memory 5" /></div>
+          <div class="photo-card"><img src="img6.jpg" alt="Memory 6" /></div>
+          <div class="photo-card"><img src="img7.jpg" alt="Memory 7" /></div>
+          <div class="photo-card"><img src="img8.jpg" alt="Memory 8" /></div>
+          <div class="photo-card"><img src="img9.jpg" alt="Memory 9" /></div>
+          <div class="photo-card"><img src="img10.jpg" alt="Memory 10" /></div>
+          <div class="photo-card"><img src="img11.jpg" alt="Memory 11" /></div>
+          <div class="photo-card"><img src="img12.jpg" alt="Memory 12" /></div>
+          <div class="photo-card"><img src="img13.jpg" alt="Memory 13" /></div>
+          <div class="photo-card"><img src="img14.jpg" alt="Memory 14" /></div>
+          <div class="photo-card"><img src="img15.jpg" alt="Memory 15" /></div>
+          <div class="photo-card"><img src="img16.jpg" alt="Memory 16" /></div>
+          <div class="photo-card"><img src="img17.jpg" alt="Memory 17" /></div>
+          <div class="photo-card"><img src="img18.jpg" alt="Memory 18" /></div>
+          <div class="photo-card"><img src="img19.jpg" alt="Memory 19" /></div>
+          <div class="photo-card"><img src="img20.jpg" alt="Memory 20" /></div>
+        </div>
+
+        <h2 class="gallery-title" style="margin-top: 10px;">our first call</h2>
+
+        <div class="call-card">
+          <img src="call.jpg" alt="Our First Call Screenshot" />
+        </div>
+
+        <button class="btn-primary" style="margin-top: 14px;" onclick="switchScreen('screen2', 'screen3')">
+          Next ➔
+        </button>
+      </div>
+    </section>
+
+    <section id="screen3" class="screen">
+      <div class="glass-card">
+        <div class="tagline">Things I Adore About You</div>
+        <div style="font-size: 24px; margin: 8px 0 14px;">💫</div>
+
+        <div class="adoration-box">
+          <div class="adoration-item">
+            <span>✨</span>
+            <p>I like your genuine interest in me...</p>
+          </div>
+          <div class="adoration-item">
+            <span>🌸</span>
+            <p>I like your beautiful personality...</p>
+          </div>
+          <div class="adoration-item">
+            <span>🕊️</span>
+            <p>I like your sweet & pure nature...</p>
+          </div>
+        </div>
+
+        <p class="curious-line">
+          ...and still, I want to know so many more things about you.
+        </p>
+
+        <p style="font-size: 15px; color: #ffccd7; margin: 18px 0 20px; font-weight: 500;">
+          Do you feel this special bond too?
+        </p>
+
+        <div class="button-arena" id="arena">
+          <button class="btn-primary" onclick="goToPoemScreen()">
+            Yes, I do ❤️
+          </button>
+          <button id="runawayBtn" class="btn-secondary" type="button">
+            No 🙈
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen4" class="screen">
+      <div class="glass-card" style="padding: 40px 22px;">
+        <div class="tagline">FROM MY SOUL</div>
+        <div style="font-size: 26px; color: #ffb800; margin: 6px 0 24px;">✨</div>
+
+        <div id="poemLines">
+          <p class="poetic-line">I love you without knowing your name...</p>
+          <p class="poetic-line">I love you without seeing you...</p>
+          <p class="poetic-line">I loved your personality...</p>
+          <p class="poetic-line cursive">And today, I want you to be mine forever.</p>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <button class="btn-primary" onclick="celebrateLove()">
+            Yes, I am yours 💖
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen5" class="screen">
+      <div class="glass-card finale-box">
+        <div class="crown-icon">👑</div>
+        <h1 class="mine-text">Now you are mine</h1>
+        <p style="font-size: 16px; color: #ffb3c6; margin-top: 8px;">
+          Together in this chapter, and all the ones to come.
+        </p>
+        <div style="font-size: 34px; margin-top: 24px;">❤️ ✨ 💍 ✨ ❤️</div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgSong');
+
+    // Instant & Reliable Screen Switcher (Zero delay bugs)
+    function switchScreen(fromId, toId) {
+      const from = document.getElementById(fromId);
+      const to = document.getElementById(toId);
+      if (from) from.classList.remove('active');
+      if (to) to.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Password Validation
+    function validatePassword() {
+      const input = document.getElementById('passInput');
+      const error = document.getElementById('errorMsg');
+
+      if (input.value.trim() === '30') {
+        error.textContent = '';
+        switchScreen('screen0', 'screen1');
+      } else {
+        error.textContent = 'Oops! Wrong passcode, try again ❤️';
+        input.classList.add('error-shake');
+        setTimeout(() => {
+          input.classList.remove('error-shake');
+        }, 400);
+      }
+    }
+
+    // Ambient Floating Hearts
+    const bgContainer = document.getElementById('ambientHearts');
+    const heartSymbols = ['♥', '💖', '💕', '💗', '♡'];
+    for (let i = 0; i < 28; i++) {
+      const span = document.createElement('span');
+      span.className = 'heart-float';
+      span.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = 5 + Math.random() * 6 + 's';
+      span.style.animationDelay = Math.random() * 5 + 's';
+      span.style.fontSize = 14 + Math.random() * 18 + 'px';
+      bgContainer.appendChild(span);
+    }
+
+    // Screen 1 -> Screen 2 (Starts Audio)
+    function startExperience() {
+      audio.play().catch(() => {});
+      switchScreen('screen1', 'screen2');
+    }
+
+    // Screen 3 -> Screen 4 (Animated Poetry)
+    function goToPoemScreen() {
+      const noBtn = document.getElementById('runawayBtn');
+      if (noBtn) noBtn.style.display = 'none';
+
+      switchScreen('screen3', 'screen4');
+      setTimeout(() => {
+        const lines = document.querySelectorAll('#poemLines .poetic-line');
+        lines.forEach((line, index) => {
+          setTimeout(() => {
+            line.classList.add('visible');
+          }, index * 700);
+        });
+      }, 300);
+    }
+
+    // Runaway "No" Button
+    const runawayBtn = document.getElementById('runawayBtn');
+
+    function fleeButton(e) {
+      if (e) e.preventDefault();
+      const padding = 20;
+      const btnWidth = runawayBtn.offsetWidth || 100;
+      const btnHeight = runawayBtn.offsetHeight || 45;
+
+      const maxX = window.innerWidth - btnWidth - padding;
+      const maxY = window.innerHeight - btnHeight - padding;
+
+      const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+
+      runawayBtn.style.position = 'fixed';
+      runawayBtn.style.left = randomX + 'px';
+      runawayBtn.style.top = randomY + 'px';
+    }
+
+    runawayBtn.addEventListener('mouseover', fleeButton);
+    runawayBtn.addEventListener('touchstart', fleeButton, { passive: false });
+    runawayBtn.addEventListener('click', fleeButton);
+
+    // Finale Explosion
+    function celebrateLove() {
+      switchScreen('screen4', 'screen5');
+      startHeartCelebration();
+    }
+
+    function startHeartCelebration() {
+      const canvas = document.getEle
